@@ -1,6 +1,5 @@
-from page.main_page import MainPage
 import pytest
-
+from homework.pageobject.page.main_page import MainPage
 
 """
 实现企业微信自动登录功能，添加部门，校验

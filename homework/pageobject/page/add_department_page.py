@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
-from page.basepage import BasePage
 from time import sleep
+from homework.pageobject.page.basepage import BasePage
 
 
 class AddDepartmentPage(BasePage):

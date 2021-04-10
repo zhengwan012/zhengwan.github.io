@@ -6,12 +6,15 @@ __time__ = '2021/4/5 21:30 晚上'
 import allure
 import pytest
 import yaml
+import subprocess
 import os
 
 
 # pip install pyyaml
 def get_datas():
-    with open("../data/calc.yml") as f:
+    path = os.path.dirname(os.path.dirname(__file__))
+    yaml_path = '/'.join(path.split('\\')) + '/data/calc.yml'
+    with open(yaml_path) as f:
         datas = yaml.safe_load(f)
     print('datas:', datas)
     return datas
@@ -53,7 +56,3 @@ class TestCal:
     @allure.story("测试相除功能--浮点数")
     def test_div_float(self, calculate, a, b, expect):
         assert expect == round(calculate.div(a, b), 2)
-if __name__ == "__main__":
-    #pytest.main(['test_calculate.py', '-v', '--setup-show', '--alluredir=./result/calculate'])
-    pytest.main(["-v", "-s", "--alluredir=./result/", "--clean-alluredir", "test_calculate.py"])
-    os.system("allure generate ./result/ -o ./report/ --clean")

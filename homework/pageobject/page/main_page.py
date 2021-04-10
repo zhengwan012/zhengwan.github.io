@@ -1,5 +1,5 @@
-from page.basepage import BasePage
-from page.content_page import ContentPage
+from homework.pageobject.page.basepage import BasePage
+from homework.pageobject.page.content_page import ContentPage
 
 
 class MainPage(BasePage):

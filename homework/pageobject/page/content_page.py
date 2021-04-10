@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
-from page.add_department_page import AddDepartmentPage
-from page.basepage import BasePage
+from homework.pageobject.page.add_department_page import AddDepartmentPage
+from homework.pageobject.page.basepage import BasePage
 
 
 class ContentPage(BasePage):
