@@ -15,6 +15,7 @@ from homework.pageobject.page.main_page import MainPage
 class TestAddDepartment:
     def setup_class(self):
         self.main = MainPage()
+        self.driver = self.main.driver
 
     @pytest.mark.parametrize("name", ["质量组", "qa"])
     def test_add_department(self, name):
@@ -27,3 +28,6 @@ class TestAddDepartment:
         print('name_list:', name_list)
         # 左补齐空格
         assert name.rjust(len(name)+1) in name_list
+
+    def teardown_class(self):
+        self.driver.quit()
